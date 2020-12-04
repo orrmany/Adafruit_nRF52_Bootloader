@@ -26,7 +26,7 @@ LD_FILE      = $(SRC_PATH)/linker/$(MCU_SUB_VARIANT)_$(SD_NAME)_v$(word 1, $(sub
 MERGED_FNAME = $(OUTPUT_FILENAME)_$(SD_NAME)_$(SD_VERSION)
 
 GIT_VERSION = $(shell git describe --dirty --always --tags)
-GIT_SUBMODULE_VERSIONS = $(shell git submodule status | cut -d' ' -f3,4 | paste -s -d" " -)
+GIT_SUBMODULE_VERSIONS = $(shell git submodule status | cut -d" " -f3,4 | paste -s -d" " -)
 
 OUTPUT_FILENAME = $(BOARD)_bootloader-$(GIT_VERSION)
 
